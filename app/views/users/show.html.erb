@@ -1,0 +1,5 @@
+<h1>users#show</h1>
+<p>メールアドレス : <%= @user.email %></p>
+<% if current_user.id == @user.id %>
+  <%= link_to "編集する", edit_user_registration_path %>
+<% end %>
