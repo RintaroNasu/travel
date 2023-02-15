@@ -1,0 +1,12 @@
+<% unless user_signed_in? %>
+<%= link_to "ログイン", new_user_session_path %>
+<%= link_to "新規登録", new_user_registration_path %>
+<% end %>
+<% if user_signed_in? %>
+  <%= link_to "マイページへ", user_path(current_user.id) %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<% end %>
+
+
+
+<h1>このサイトの紹介文がくる</h1>

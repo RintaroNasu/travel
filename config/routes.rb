@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :users, only: [:show] 
   resources :tweets do
+    collection do
+      get :top 
+    end
     resources :likes, only: [:create, :destroy]
   end
   resources :tests
-  root'tweets#index'
+  root'tweets#top'
 end
